@@ -19,16 +19,18 @@ function App() {
        setRespMult(parseFloat(n1) * parseFloat(n2))
        setRespDiv(parseFloat(n1) / parseFloat(n2))
 
-       setError('')
+       setError('Digite valores numéricos para calcular')
       }else{
         setError('Digite valores numéricos para calcular')
       }
     }, [n1, n2])
    
   return (
-    <>
+    <div className={styles.wrapAll}>
     <h1 className={styles.title}>Calculadora</h1>
-    <div classNamo={styles.wrap}>
+    <p>{error}</p>
+    
+    <div className={styles.wrap}>
       <input type="number" onChange={(e) => setN1(e.target.value)} valeu={n1} placeholder='insira um número'/>
       <input type="number" onChange={(e) => setN2(e.target.value)} valeu={n2} placeholder='insira outro número'/>
     </div>
@@ -52,7 +54,7 @@ function App() {
       <h2>Resultado da Divisão</h2>
       <h3>{respDiv}</h3>
     </div>
-   </>
+    </div>
   )
 }
 
